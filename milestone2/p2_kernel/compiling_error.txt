@@ -1,0 +1,51 @@
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c:8:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+ main(){
+ ^
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c: In function ‘main’:
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c:14:2: warning: implicit declaration of function ‘makeInterrupt21’ [-Wimplicit-function-declaration]
+  makeInterrupt21();
+  ^
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c:26:2: warning: implicit declaration of function ‘interrupt’ [-Wimplicit-function-declaration]
+  interrupt(0x21,0x00, "shell>\0", 0, 0);// display prompt
+  ^
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c: In function ‘handleInterrupt21’:
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c:61:25: warning: passing argument 1 of ‘printString’ makes pointer from integer without a cast [-Wint-conversion]
+             printString(BX);
+                         ^
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c:1:6: note: expected ‘char *’ but argument is of type ‘int’
+ void printString(char*);
+      ^
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c:64:24: warning: passing argument 1 of ‘readString’ makes pointer from integer without a cast [-Wint-conversion]
+             readString(BX);
+                        ^
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c:2:6: note: expected ‘char *’ but argument is of type ‘int’
+ void readString(char*);
+      ^
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c:68:24: warning: passing argument 1 of ‘readSector’ makes pointer from integer without a cast [-Wint-conversion]
+             readSector(BX,30);
+                        ^
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c:3:6: note: expected ‘char *’ but argument is of type ‘int’
+ void readSector(char* buffer, int sector);
+      ^
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c:75:16: warning: passing argument 1 of ‘writeSector’ makes pointer from integer without a cast [-Wint-conversion]
+    writeSector(BX,CX);
+                ^
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c:4:6: note: expected ‘char *’ but argument is of type ‘int’
+ void writeSector(char* buffer, int sector);
+      ^
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c: In function ‘writeSector’:
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c:99:25: warning: implicit declaration of function ‘mod’ [-Wimplicit-function-declaration]
+         int relSector = mod(sector,18) + 1;
+                         ^
+/home/aribambang/Documents/SO/milestone2-kit/1/p2_kernel.c:101:18: warning: implicit declaration of function ‘div’ [-Wimplicit-function-declaration]
+         int op = div(sector,18);
+                  ^
+/tmp/ccx3GKvZ.o: In function `main':
+p2_kernel.c:(.text+0x20): undefined reference to `makeInterrupt21'
+p2_kernel.c:(.text+0xa8): undefined reference to `interrupt'
+p2_kernel.c:(.text+0xd1): undefined reference to `interrupt'
+p2_kernel.c:(.text+0xfa): undefined reference to `interrupt'
+p2_kernel.c:(.text+0x123): undefined reference to `interrupt'
+p2_kernel.c:(.text+0x14c): undefined reference to `interrupt'
+/tmp/ccx3GKvZ.o:p2_kernel.c:(.text+0x199): more undefined references to `interrupt' follow
+collect2: error: ld returned 1 exit status
